@@ -27,24 +27,91 @@
             </ul>
         </nav>
         <main>
-
+            <section aria-labelledby="experiences-heading">
+                <h2 id="work-experience-heading">Career Experience</h2>
+                <ol>
+                    <li>
+                        <ul>
+                            <li>Company: City of San Diego</li>
+                            <li>Job Title: Student Intern</li>
+                            <li>Duration: June 2024 - September 2024</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>Company: City of San Diego</li>
+                            <li>Job Title: Web Developer Intern</li>
+                            <li>Duration: September 2024 - October 2025</li>
+                            <li>
+                                Description: Updating and Maintaining the official website of the City.
+                                Administration of the City's webpages using Drupal(CMS).
+                                Setup a local testing environment using WSL2, Docker, and DDEV.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <label for="school">Degree Progress:</label>
+                <progress value="75" max="100">75%</progress>
+                <button command="show-modal" commandfor="my-dialog">Find an Internship</button>
+                <dialog>
+                    <p>Its never that easy.</p>
+                    <button commandfor="my-dialog" command="close">Go Back</button>
+                </dialog>
+            </section>
+            <br/>
+            <section aria-labelledby="projects-heading">
+                <h2 id="projects-heading">Projects I have built</h2>
+                <ul>
+                    <li>
+                        <ul>
+                            <li>Project Name: Carden</li>
+                            <li>Description: 
+                                Designed and built an interactive, fully browser-based card puzzle game 
+                                with emphasis on intuitive UI layout and smooth CSS animations for an 
+                                engaging player experience. Followed Agile development practices – planning
+                                iterative sprints and incorporating feedback – to progressively improve game
+                                responsiveness and flow. Applied player interaction observations and user 
+                                feedback to refine game mechanics and inform design decisions throughout development.
+                            </li>
+                            <li>Date Completed: March 2025 - June 2025</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>Project Name: Triton Living</li>
+                            <li>Description: 
+                                Built a full-stack roommate discovery platform for UCSD students using Next.js,
+                                Prisma, and PostgreSQL, modeling user profiles, housing/lifestyle preferences, 
+                                saved candidates, and messages in a relational schema. Implemented a weighted 
+                                compatibility engine ranking candidates across 20+ categories (budget, location,
+                                social habits, etc.) with user-controlled priority weighting and explainable match reasons.
+                                Integrated OpenAI API to generate per-user lifestyle summaries and per-pair match 
+                                explanations, persisted in PostgreSQL and regenerated when preferences change.
+                                Built one-on-one messaging with Prisma-backed conversation persistence, deduplicated 
+                                per user pair, and kept live via database polling.
+                            </li>
+                            <li>Date Completed: April 2026 - July 2026</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
         </main>
         <aside aria-labelledby="journal-heading">
-            <h2 id="journal-heading">Featured from my journal</h2>
-            <ul>
-                <li>
-                    How the aura farming kid from tiktok helped me find a community
+            <article>
+                <h2 id="journal-heading">Featured from my journal</h2>
+                <article>
+                    <h3>How the aura farming kid from tiktok helped me find a community</h3>
                     <em>Coming soon</em>
-                </li>
-                <li>
-                    You don't need to optimize your life
+                </article>
+                <article>
+                    <h3>You don't need to optimize your life</h3>
                     <em>Coming soon</em>
-                </li>
-                                <li>
-                    My take on why UCSD isn't socially dead
+                </article>
+                <article>
+                    <h3>My take on why UCSD isn't socially dead</h3>
                     <em>Coming soon</em>
-                </li>
-            </ul>
+                </article>
+            </article>
         </aside>
         <footer>
             <p>Thanks for stopping by!</p>
