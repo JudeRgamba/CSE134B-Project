@@ -7,13 +7,18 @@
             content="Personal website showcasing Jude Gamba's portfolio">
         <Title>Work Page</Title>
         <link rel=""icon" href="assets/favicon.svg" type="image/svg+xml">
+        <style>
+            main {
+                border: 2px solid black;
+            }
+        </style>
     </head>
     <body>
         <header>
             <h1>Serious Stuff...</h1>
         </header>
         <nav aria-label="Main navigation">
-            <h2>jude.gamba</h2>
+            <h2><span class="first-name">jude</span>.<span class="last-name">gamba</span></h2>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
@@ -21,7 +26,7 @@
                 <li><a href="connect.html" aria-current="page">Let's Connect</a></li>
                 <li>
                     <a href="assets/jude-gamba-resume.pdf" download>
-                        Download Resume
+                        <b>Download Resume</b>
                     </a>
                 </li>
             </ul>
@@ -29,27 +34,29 @@
         <main>
             <section aria-labelledby="experiences-heading">
                 <h2 id="work-experience-heading">Career Experience</h2>
-                <ol>
-                    <li>
-                        <ul>
-                            <li>Company: City of San Diego</li>
-                            <li>Job Title: Student Intern</li>
-                            <li>Duration: June 2024 - September 2024</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li>Company: City of San Diego</li>
-                            <li>Job Title: Web Developer Intern</li>
-                            <li>Duration: September 2024 - October 2025</li>
-                            <li>
-                                Description: Updating and Maintaining the official website of the City.
-                                Administration of the City's webpages using Drupal(CMS).
-                                Setup a local testing environment using WSL2, Docker, and DDEV.
-                            </li>
-                        </ul>
-                    </li>
-                </ol>
+                <work-timeline>
+                    <ol>
+                        <li>
+                            <ul>
+                                <li>Company: City of San Diego</li>
+                                <li>Job Title: Student Intern</li>
+                                <li>Duration: June 2024 - September 2024</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li>Company: City of San Diego</li>
+                                <li>Job Title: Web Developer Intern</li>
+                                <li>Duration: September 2024 - October 2025</li>
+                                <li>
+                                    Description: Updating and Maintaining the official website of the City.
+                                    Administration of the City's webpages using Drupal(CMS).
+                                    Setup a local testing environment using WSL2, Docker, and DDEV.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </work-timeline>
                 <label for="school">Degree Progress:</label>
                 <progress value="75" max="100">75%</progress>
                 <button command="show-modal" commandfor="my-dialog">Find an Internship</button>
@@ -63,35 +70,44 @@
                 <h2 id="projects-heading">Projects I have built</h2>
                 <ul>
                     <li>
-                        <ul>
-                            <li>Project Name: Carden</li>
-                            <li>Description: 
-                                Designed and built an interactive, fully browser-based card puzzle game 
-                                with emphasis on intuitive UI layout and smooth CSS animations for an 
-                                engaging player experience. Followed Agile development practices – planning
-                                iterative sprints and incorporating feedback – to progressively improve game
-                                responsiveness and flow. Applied player interaction observations and user 
-                                feedback to refine game mechanics and inform design decisions throughout development.
-                            </li>
-                            <li>Date Completed: March 2025 - June 2025</li>
-                        </ul>
+                        <project-card>
+                            <div class="project-details">
+                                <h3>TritonLiving</h3>
+                                <p>
+                                    Designed and built an interactive, fully browser-based card puzzle game 
+                                    with emphasis on intuitive UI layout and smooth CSS animations for an 
+                                    engaging player experience. Followed Agile development practices – planning
+                                    iterative sprints and incorporating feedback – to progressively improve game
+                                    responsiveness and flow. Applied player interaction observations and user 
+                                    feedback to refine game mechanics and inform design decisions throughout development.
+                                </p>
+                                <p>
+                                    March 2025 - June 2025
+                                </p>
+                            </div>
+                        </project-card>
                     </li>
+
                     <li>
-                        <ul>
-                            <li>Project Name: Triton Living</li>
-                            <li>Description: 
-                                Built a full-stack roommate discovery platform for UCSD students using Next.js,
-                                Prisma, and PostgreSQL, modeling user profiles, housing/lifestyle preferences, 
-                                saved candidates, and messages in a relational schema. Implemented a weighted 
-                                compatibility engine ranking candidates across 20+ categories (budget, location,
-                                social habits, etc.) with user-controlled priority weighting and explainable match reasons.
-                                Integrated OpenAI API to generate per-user lifestyle summaries and per-pair match 
-                                explanations, persisted in PostgreSQL and regenerated when preferences change.
-                                Built one-on-one messaging with Prisma-backed conversation persistence, deduplicated 
-                                per user pair, and kept live via database polling.
-                            </li>
-                            <li>Date Completed: April 2026 - July 2026</li>
-                        </ul>
+                        <project-card>
+                            <div class="project-details">
+                                <h3>Carden</h3>
+                                <p>
+                                    Built a full-stack roommate discovery platform for UCSD students using Next.js,
+                                    Prisma, and PostgreSQL, modeling user profiles, housing/lifestyle preferences, 
+                                    saved candidates, and messages in a relational schema. Implemented a weighted 
+                                    compatibility engine ranking candidates across 20+ categories (budget, location,
+                                    social habits, etc.) with user-controlled priority weighting and explainable match reasons.
+                                    Integrated OpenAI API to generate per-user lifestyle summaries and per-pair match 
+                                    explanations, persisted in PostgreSQL and regenerated when preferences change.
+                                    Built one-on-one messaging with Prisma-backed conversation persistence, deduplicated 
+                                    per user pair, and kept live via database polling.
+                                </p>
+                                <p>
+                                    April 2026 - July 2026
+                                </p>
+                            </div>
+                        </project-card>
                     </li>
                 </ul>
             </section>
@@ -117,5 +133,15 @@
             <p>Thanks for stopping by!</p>
             <a href="experiments.html">Experiment Playground</a>
         </footer>
+        <script>
+            class WorkTimeline extends HTMLElement {
+                constructor() {
+                    super();
+                    console.log("Hello world");
+                }
+            }
+
+            customElements.define("work-timeline", WorkTimeline);
+        </script>
     </body>
 </html>

@@ -7,12 +7,17 @@
             content="Personal website showcasing Jude Gamba's portfolio">
         <Title>Experiments Page</Title>
         <link rel=""icon" href="assets/favicon.svg" type="image/svg+xml">
+        <style>
+            main {
+                border: 2px solid black;
+            }
+        </style>
     </head>
         <header>
             <h1>Experiments</h1>
         </header>
         <nav aria-label="Main navigation">
-            <h2>jude.gamba</h2>
+            <h2><span class="first-name">jude</span>.<span class="last-name">gamba</span></h2>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
@@ -20,13 +25,59 @@
                 <li><a href="connect.html" aria-current="page">Let's Connect</a></li>
                 <li>
                     <a href="assets/jude-gamba-resume.pdf" download>
-                        Download Resume
+                        <b>Download Resume</b>
                     </a>
                 </li>
             </ul>
         </nav>
         <main>
+            <section aria-labelledby="audio-experiment">
+                <h2>Audio Experiment</h2>
+                <audio controls>
+                    <source src="assets/audio/sample.mp3" type="audio/mpeg">
+                    Your browser does not support HTML audio.
+                </audio>
+            </section>
+            <section aria-labelledby="video-experiment">
+                <h2>Video Experiment</h2>
+                <video controls width="480">
+                    <source src="assets/images/race.MOV" type="video/mp4">
+                    Your browser does not support HTML video.
+                </video>
+            </section>
+            <section aria-labelledby="canvas-experiment">
+                <h2>Canvas Experiment</h2>
+                <canvas id="drawing" width="320" height="160">
+                    A blue rectangle with the text “Hello world.”
+                </canvas>
+            </section>
+            <section aria-labelledby="template-experiment">
+                <h2>Template Experiment</h2>
+                <p>
+                    This template stores reusable HTML.
+                    Its contents remain hidden until activated with JavaScript.
+                </p>
 
+                <template id="project-template">
+                    <article>
+                        <h3>Project name</h3>
+                        <p>Project description goes here.</p>
+                    </article>
+                </template>
+            </section>
+            <section aria-labelledby="svg-experiment">
+            <h2>SVG Experiment</h2>
+                <svg width="240" height="140">
+                    <title>A translucent blue rectangle with a black border</title>
+                    <rect
+                        width="200"
+                        height="100"
+                        fill="royalblue"
+                        opacity="0.7"
+                        stroke="black">
+                    </rect>
+                </svg>
+            </section>
         </main>
         <aside aria-labelledby="journal-heading">
             <article>
@@ -49,5 +100,16 @@
             <p>Thanks for stopping by!</p>
             <a href="experiments.html">Experiment Playground</a>
         </footer>
+        <script>
+            const canvas = document.getElementById("drawing");
+            const context = canvas.getContext("2d");
+            if (context) {
+                context.fillStyle = "royalblue";
+                context.fillRect(0, 0, canvas.width, canvas.height);
+                context.fillStyle = "white";
+                context.font = "24px sans-serif";
+                context.fillText("Hello world", 30, 90);
+            }
+        </script>
     </body>
 </html>
